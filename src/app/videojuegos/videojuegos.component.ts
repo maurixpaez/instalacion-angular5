@@ -2,25 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
         selector: 'videojuegos',
-        template: ` 
-        <h2>Componente de {{ nombre }} </h2>
-        <h3 *ngIf="mostrar_retro != true">El mejor juego es : {{ mejor_juego }}</h3>
-        <h3 [style.background]="color" *ngIf="mostrar_retro">El mejor juego retro es : {{ mejor_juego_retro }}</h3>
-
-        <h3>Listado de Juegos</h3>
-        <ul>
-            <li *ngFor="let game of videojuegos">{{ game }}</li>
-        </ul>
-        `             
+        templateUrl: 'videojuegos.component.html'          
 })
 export class VideojuegosComponent{
-    public nombre = 'Videojuegos 2018';
-    public mejor_juego = 'Call of Duty';
-    public mejor_juego_retro = 'Super Mario 64';
-    public mostrar_retro = true;
-    public color = "yellow";
+    public nombre:string = 'Videojuegos 2018';
+    public mejor_juego:string = 'Call of Duty';
+    public mejor_juego_retro:string = 'Super Mario 64';
+    public mostrar_retro:boolean = true;
+    public color:string = "yellow";
+    public year:number = 2018
 
-    public videojuegos = [
+    public videojuegos:Array<string> = [
         'Los simpson hit and run',
         'Assasin creed',
         'GTA 5',
